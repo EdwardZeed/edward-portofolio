@@ -25,6 +25,7 @@ function App() {
         <Skills />
         <Projects />
         <Contact />
+        <Analytics />
       </main>
 
       <Footer />
