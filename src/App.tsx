@@ -25,11 +25,12 @@ function App() {
         <Skills />
         <Projects />
         <Contact />
-        <Analytics />
       </main>
 
       <Footer />
       <ScrollUp />
+
+      <Analytics />
     </>
   );
 }
