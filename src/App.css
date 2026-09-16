@@ -61,9 +61,28 @@ h2{font-size:34px;letter-spacing:-1.2px;font-weight:500;margin:0 0 38px}
 .text-link svg{width:17px;height:17px;transition:transform .2s}
 .text-link:hover svg{transform:translate(2px,-2px)}
 .work-panel .text-link{margin-top:10px}
-footer{padding:64px 0 30px;display:flex;align-items:center;justify-content:space-between}
+.skills-section{padding-top:64px}
+.skills-section>.eyebrow{margin-bottom:20px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.skills-group h3{font-size:16px;font-weight:600;letter-spacing:-.2px;margin:0 0 15px}
+.skill-tags{list-style:none;display:flex;flex-wrap:wrap;gap:9px;margin:0;padding:0}
+.skill-tags li{font-size:14px;padding:7px 14px;border:1px solid var(--line);border-radius:100px;color:var(--muted)}
+.projects-teaser{padding-top:64px}
+.projects-teaser-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px}
+.projects-teaser-head .eyebrow{margin-bottom:15px}
+.projects-teaser-head h2{margin:0}
+.projects-preview-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.project-preview-card{display:block;background:var(--paper);padding:24px 26px;transition:background .2s}
+.project-preview-card:hover{background:#f0f5f4;color:inherit}
+.project-preview-card h3{font-size:17px;font-weight:600;letter-spacing:-.3px;margin:0 0 8px}
+.project-preview-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+footer{padding:80px 0 30px;display:flex;align-items:flex-start;justify-content:space-between}
 footer p{margin:0 0 8px;font-size:16px;color:var(--muted)}
-footer .margin-note{margin:0}
+footer .margin-note{margin:0;padding-top:6px}
+.contact-block .eyebrow{margin-bottom:15px}
+.contact-block h2{margin-bottom:22px}
+.contact-email{display:inline-block;font-size:20px;font-weight:500;letter-spacing:-.2px;text-decoration:underline;text-underline-offset:3px}
+.footer-links{margin-top:30px}
 .details-dialog{color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:45px;max-width:620px;width:calc(100% - 40px);box-shadow:0 24px 100px #10203022}
 .details-dialog::backdrop{background:#14243255;backdrop-filter:blur(4px)}
 .details-dialog h2{margin-bottom:10px}
@@ -73,6 +92,22 @@ footer .margin-note{margin:0}
 .details-dialog ul{padding-left:20px;margin:26px 0}
 .close-dialog{position:absolute;top:18px;right:16px;padding:5px}
 .details-dialog[open]{animation:arrive .25s ease}
+.back-link{display:inline-block;margin-bottom:26px;color:var(--muted);font-size:14px}
+.back-link:hover{color:var(--blue)}
+.projects-hero{padding:150px 0 50px}
+.projects-hero h1{margin-bottom:14px}
+.projects-intro{color:var(--muted);font-size:18px;max-width:620px;line-height:1.5;margin:0}
+.project-list{border-top:1px solid var(--line);padding-bottom:60px}
+.project-card{border-bottom:1px solid var(--line);padding:38px 0}
+.project-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px}
+.project-card-head h2{margin:0;font-size:24px;letter-spacing:-.6px}
+.project-type{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1.1px;white-space:nowrap}
+.project-summary{font-size:17px;margin:12px 0 6px}
+.project-tags{color:var(--muted);margin:0 0 16px}
+.project-card ul{padding-left:20px;margin:0}
+.project-card li{line-height:1.65;margin:9px 0}
+.project-card .text-link{margin-top:16px}
+.projects-page footer{padding-top:20px;border-top:1px solid var(--line)}
 @keyframes arrive{from{opacity:0;transform:translateY(8px)}
 to{opacity:1;transform:translateY(0)}
 }
@@ -91,12 +126,14 @@ to{opacity:1;transform:translateY(0)}
 .social-links a{padding:0 18px}
 .work-toggle{grid-template-columns:155px 1fr 25px}
 .work-panel{padding-left:155px}
+.skills-grid{grid-template-columns:repeat(2,1fr);gap:28px}
 }
 
 @media(max-width:600px){.site-header{margin:0 6%;padding:23px 0}
 .wordmark{font-size:19px}
-nav{gap:16px;font-size:12px}
+nav{gap:14px;font-size:12px}
 nav a:first-child{display:none}
+nav a[href="#skills"]{display:none}
 .page{margin:0 7%}
 .globe-intro{height:120svh}
 .globe-stage{min-height:540px}
@@ -126,8 +163,23 @@ h2{font-size:27px;letter-spacing:-.9px;line-height:1.25;margin-bottom:27px}
 footer{padding:42px 0 25px}
 footer>div>p{font-size:14px}
 footer>.margin-note{display:none}
+.contact-email{font-size:17px}
+.footer-links{margin-top:24px}
+.footer-links a{padding:0 16px;font-size:14px}
 .details-dialog{padding:32px 25px}
 .details-dialog li{font-size:15px}
+.skills-section{padding-top:44px}
+.skills-grid{grid-template-columns:1fr;gap:26px}
+.projects-teaser{padding-top:44px}
+.projects-teaser-head{flex-direction:column;align-items:flex-start;gap:12px}
+.projects-preview-grid{grid-template-columns:1fr}
+.projects-hero{padding:118px 0 34px}
+.projects-hero h1{font-size:clamp(33px,10vw,43px);letter-spacing:-1.9px}
+.projects-intro{font-size:16px}
+.project-card{padding:28px 0}
+.project-card-head{flex-direction:column;gap:6px}
+.project-card-head h2{font-size:20px}
+.project-summary{font-size:15px}
 }
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
