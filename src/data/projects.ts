@@ -7,6 +7,42 @@ export interface Project {
   repo?: string;
 }
 
+export const joboard = {
+  title: 'Joboard',
+  since: 'Running every morning since September 2026',
+  summary:
+    'An agent that runs my job search. Each morning it finds roles, decides which ones fit, applies to them, and sends me a report over iMessage. A dashboard keeps the whole history.',
+  steps: [
+    {
+      name: 'Search',
+      text: 'A Deep Agents loop picks keywords from my resume and searches SEEK, LinkedIn and employer ATSs like Greenhouse, Lever and Workday, reading each full job description.',
+    },
+    {
+      name: 'Judge',
+      text: 'The model gathers evidence; code makes the call. TypeSafe Jev answers fixed questions (recruiter or employer, right seniority, matching stack) and written rules filter and score.',
+    },
+    {
+      name: 'Apply',
+      text: 'Browser Use Cloud agents fill in and submit forms using only my resume and facts I’ve confirmed. A question they can’t answer stops the form before submit and comes to me.',
+    },
+    {
+      name: 'Record',
+      text: 'Results go back to the dashboard through an MCP endpoint. Employer replies move each application forward: interview, rejected or offer.',
+    },
+  ],
+  safeguards: [
+    'A submitted application can’t be taken back, so the agent records the attempt before opening a browser, counts it only after seeing a confirmation page, and locks any job where it can’t tell.',
+    'A rehearsal mode runs the full flow and stops on the final submit page.',
+    'When an employer’s ATS needs an account, the agent signs up with its own mailbox, reads the verification code over IMAP and finishes in the same browser session.',
+    'It stops when Browser Use credit runs low and leaves the remaining jobs for the next run.',
+  ],
+  stack: [
+    { part: 'Dashboard', items: ['Next.js', 'Supabase', 'MCP server', 'Vercel'] },
+    { part: 'Agent', items: ['Python', 'Deep Agents', 'TypeSafe Jev', 'Browser Use Cloud', 'Railway', 'iMessage', 'Gmail API'] },
+  ],
+  repo: 'https://github.com/EdwardZeed/JOBOARD',
+};
+
 export const projects: Project[] = [
   {
     title: 'Suncycle',

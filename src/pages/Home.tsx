@@ -9,7 +9,7 @@ import NorthEast from '@mui/icons-material/NorthEast';
 import Close from '@mui/icons-material/Close';
 import South from '@mui/icons-material/South';
 import ConnectionGlobe from '../components/ConnectionGlobe';
-import { projects } from '../data/projects';
+import { joboard, projects } from '../data/projects';
 
 const work = [
   {
@@ -66,7 +66,7 @@ const work = [
 const skillGroups = [
   {
     category: 'Frontend & Mobile',
-    items: ['React', 'TypeScript', 'Tailwind CSS', 'SwiftUI', 'Jetpack Compose'],
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SwiftUI', 'Jetpack Compose'],
   },
   {
     category: 'Backend & Data',
@@ -74,7 +74,11 @@ const skillGroups = [
   },
   {
     category: 'Cloud & Tooling',
-    items: ['AWS', 'GCP', 'CloudFormation', 'Git', 'Ray'],
+    items: ['AWS', 'GCP', 'Vercel', 'Railway', 'CloudFormation', 'Git', 'Ray'],
+  },
+  {
+    category: 'AI & Agents',
+    items: ['Deep Agents', 'MCP', 'Browser Use', 'Claude Agent SDK', 'TypeSafe Jev'],
   },
 ];
 
@@ -244,6 +248,15 @@ function Home() {
               </Link>
             </div>
             <div className="projects-preview-grid">
+              <Link className="project-preview-card project-preview-card--featured" to="/projects">
+                <h3>{joboard.title}</h3>
+                <p>{joboard.summary}</p>
+                <ol className="preview-flow" aria-label="Daily run">
+                  {joboard.steps.map(step => (
+                    <li key={step.name}>{step.name}</li>
+                  ))}
+                </ol>
+              </Link>
               {projects.map(project => (
                 <Link className="project-preview-card" to="/projects" key={project.title}>
                   <h3>{project.title}</h3>
