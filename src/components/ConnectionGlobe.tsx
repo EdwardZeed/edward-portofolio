@@ -8,7 +8,7 @@ type Props = {
 const companies = [
   { point: 4, name: 'BYBIT' },
   { point: 10, name: 'BLUERATE' },
-  { point: 16, name: 'MIRA' },
+  { point: 16, name: 'MIRO' },
   { point: 22, name: 'STRONG COMPUTE' },
 ];
 

@@ -28,7 +28,7 @@ test('resume links use the supplied CV and the experience map reveals a company'
  const network = screen.getByRole('button', { name: 'Interactive experience map' });
  fireEvent.mouseEnter(network);
  expect(screen.getByText('Click the node to explore')).toBeVisible();
- expect(screen.getAllByText('Mira')).toHaveLength(2);
+ expect(screen.getAllByText('Miro')).toHaveLength(2);
  fireEvent.click(network);
- expect(screen.getByRole('button', { name: 'Mira Frontend Developer Intern' })).toHaveAttribute('aria-expanded', 'true');
+ expect(screen.getByRole('button', { name: 'Miro Frontend Developer Intern' })).toHaveAttribute('aria-expanded', 'true');
 });

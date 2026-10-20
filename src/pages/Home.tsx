@@ -38,7 +38,7 @@ const work = [
     ],
   },
   {
-    name: 'Mira',
+    name: 'Miro',
     role: 'Frontend Developer Intern',
     summary: 'Turning design specifications into responsive, production-ready interfaces.',
     tags: 'TypeScript · Tailwind CSS · Git · Client collaboration',
