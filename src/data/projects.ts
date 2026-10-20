@@ -1,4 +1,5 @@
 export interface Project {
+  slug: string;
   title: string;
   type: string;
   summary: string;
@@ -8,6 +9,7 @@ export interface Project {
 }
 
 export const joboard = {
+  slug: 'joboard',
   title: 'Joboard',
   since: 'Running every morning since September 2026',
   summary:
@@ -45,6 +47,7 @@ export const joboard = {
 
 export const projects: Project[] = [
   {
+    slug: 'suncycle',
     title: 'Suncycle',
     type: 'Full-stack marketplace',
     summary: 'A marketplace for recycling solar panel boards across Australia, built to create a reliable secondary-materials market.',
@@ -56,6 +59,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'on-task-achiever',
     title: 'On Task Achiever',
     type: 'Cross-platform mobile app',
     summary: 'A task-management app for iOS and Android sharing one Kotlin Multiplatform codebase.',
@@ -68,6 +72,7 @@ export const projects: Project[] = [
     repo: 'https://github.com/EdwardZeed/FamilyChoreManager',
   },
   {
+    slug: 'cafe-app',
     title: 'Cafe App',
     type: 'Cloud infrastructure',
     summary: 'A cafe web app deployed on AWS with auto-scaling and a hardened network path for high availability.',
@@ -79,6 +84,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'exchange-rate-desktop-app',
     title: 'Exchange Rate Desktop App',
     type: 'Desktop application',
     summary: 'A JavaFX desktop app for checking live exchange rates.',

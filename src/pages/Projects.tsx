@@ -1,22 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NorthEast from '@mui/icons-material/NorthEast';
+import SubpageHeader from '../components/SubpageHeader';
+import ContactFooter from '../components/ContactFooter';
+import useDocumentTitle from '../useDocumentTitle';
 import { joboard, projects } from '../data/projects';
 
 function Projects() {
+  useDocumentTitle('Projects — Edward Zheng');
   return (
     <>
-      <a className="skip-link" href="#project-list">Skip to content</a>
-      <header className="site-header">
-        <Link className="wordmark" to="/">Edward Zheng</Link>
-        <nav aria-label="Main navigation">
-          <Link to="/">Home</Link>
-          <a href="mailto:zhengwenxi7@gmail.com">Contact</a>
-          <a href="/Edward_CV.pdf" target="_blank" rel="noreferrer">Resume</a>
-        </nav>
-      </header>
+      <a className="skip-link" href={`#${joboard.slug}`}>Skip to content</a>
+      <SubpageHeader />
 
-      <main className="page projects-page">
+      <main className="page subpage projects-page">
         <section className="projects-hero" aria-labelledby="projects-title">
           <Link className="back-link" to="/">← Back to home</Link>
           <p className="eyebrow">Projects</p>
@@ -26,7 +23,7 @@ function Projects() {
           </p>
         </section>
 
-        <article className="featured" id="project-list" aria-labelledby="joboard-title">
+        <article className="featured" id={joboard.slug} aria-labelledby="joboard-title">
           <div className="featured-head">
             <h2 id="joboard-title">{joboard.title}</h2>
             <p className="featured-since">{joboard.since}</p>
@@ -78,7 +75,7 @@ function Projects() {
         <h2 className="earlier-title" id="earlier-title">Earlier projects</h2>
         <section className="project-list" aria-labelledby="earlier-title">
           {projects.map(project => (
-            <article className="project-card" key={project.title}>
+            <article className="project-card" id={project.slug} key={project.slug}>
               <div className="project-card-head">
                 <h2>{project.title}</h2>
                 <span className="project-type">{project.type}</span>
@@ -99,13 +96,7 @@ function Projects() {
           ))}
         </section>
 
-        <footer>
-          <div>
-            <p>Curious how any of these work?</p>
-            <a className="text-link" href="mailto:zhengwenxi7@gmail.com">Say hello <NorthEast /></a>
-          </div>
-          <p className="margin-note">Open minds<br />Better systems<br />Brighter outcomes</p>
-        </footer>
+        <ContactFooter />
       </main>
     </>
   );

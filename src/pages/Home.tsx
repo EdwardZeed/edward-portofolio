@@ -9,9 +9,21 @@ import NorthEast from '@mui/icons-material/NorthEast';
 import Close from '@mui/icons-material/Close';
 import South from '@mui/icons-material/South';
 import ConnectionGlobe from '../components/ConnectionGlobe';
+import ContactFooter from '../components/ContactFooter';
+import useDocumentTitle from '../useDocumentTitle';
 import { joboard, projects } from '../data/projects';
 
-const work = [
+type WorkItem = {
+  name: string;
+  role: string;
+  summary: string;
+  tags: string;
+  period: string;
+  details: string[];
+  caseStudy?: string;
+};
+
+const work: WorkItem[] = [
   {
     name: 'Bybit',
     role: 'Compliance quality assurance',
@@ -83,6 +95,7 @@ const skillGroups = [
 ];
 
 function Home() {
+  useDocumentTitle('Edward Zheng — Software Engineer');
   const [expanded, setExpanded] = useState<number | null>(0);
   const [active, setActive] = useState<number | null>(null);
   const [globeCompany, setGlobeCompany] = useState<number | null>(null);
@@ -211,9 +224,11 @@ function Home() {
                   >
                     <p>{item.summary}</p>
                     <p className="work-tags">{item.tags}</p>
-                    <button className="text-link" onClick={() => openDetails(index)}>
-                      My contribution <NorthEast />
-                    </button>
+                    <div className="work-actions">
+                      <button className="text-link" onClick={() => openDetails(index)}>
+                        My contribution <NorthEast />
+                      </button>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -248,7 +263,7 @@ function Home() {
               </Link>
             </div>
             <div className="projects-preview-grid">
-              <Link className="project-preview-card project-preview-card--featured" to="/projects">
+              <Link className="project-preview-card project-preview-card--featured" to={`/projects#${joboard.slug}`}>
                 <h3>{joboard.title}</h3>
                 <p>{joboard.summary}</p>
                 <ol className="preview-flow" aria-label="Daily run">
@@ -258,7 +273,7 @@ function Home() {
                 </ol>
               </Link>
               {projects.map(project => (
-                <Link className="project-preview-card" to="/projects" key={project.title}>
+                <Link className="project-preview-card" to={`/projects#${project.slug}`} key={project.slug}>
                   <h3>{project.title}</h3>
                   <p>{project.summary}</p>
                 </Link>
@@ -266,18 +281,7 @@ function Home() {
             </div>
           </section>
 
-          <footer id="contact">
-            <div className="contact-block">
-              <p className="eyebrow">Get in touch</p>
-              <h2>Let’s build something worth trusting.</h2>
-              <a className="contact-email" href="mailto:zhengwenxi7@gmail.com">zhengwenxi7@gmail.com</a>
-              <div className="social-links footer-links">
-                <a href="https://github.com/EdwardZeed" target="_blank" rel="noreferrer"><GitHub />GitHub</a>
-                <a href="https://www.linkedin.com/in/wenxi-zheng-6364b322a/" target="_blank" rel="noreferrer"><LinkedIn />LinkedIn</a>
-              </div>
-            </div>
-            <p className="margin-note">Open minds<br />Better systems<br />Brighter outcomes</p>
-          </footer>
+          <ContactFooter />
         </div>
       </main>
 
