@@ -140,10 +140,46 @@ footer .margin-note{margin:0;padding-top:6px}
 .featured-stack dt{font-size:14px;color:var(--muted);padding-top:7px}
 .featured-stack dd{margin:0}
 .earlier-title{margin:0 0 24px}
+.case-study-card{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 48px;margin:0 0 64px;padding:34px 36px;border:1px solid var(--line);border-left:3px solid var(--teal);background:#fff}
+.case-study-card .eyebrow{margin-bottom:14px}
+.case-study-card h2{font-size:26px;letter-spacing:-.7px;line-height:1.25;margin:0 0 12px;max-width:24em}
+.case-study-card p:not(.eyebrow){margin:0;color:var(--muted);font-size:16px;line-height:1.55;max-width:40em}
+.case-study-card .text-link{white-space:nowrap}
 .not-found-hero{padding:150px 0 110px}
 .not-found-hero h1{max-width:12em}
 .not-found-links{list-style:none;display:flex;flex-wrap:wrap;gap:14px 34px;margin:34px 0 0;padding:0}
-.not-found-hero h1:focus{outline:none}
+.not-found-hero h1:focus,.cs-hero h1:focus{outline:none}
+.cs-hero{padding:150px 0 56px}
+.cs-hero h1{font-size:52px;letter-spacing:-2px;line-height:1.1;max-width:15em}
+.cs-lede{font-size:21px;line-height:1.5;max-width:38em;margin:0;color:var(--ink)}
+.cs-stats{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:52px 0 0;padding:0;background:var(--line);border:1px solid var(--line)}
+.cs-stats li{background:var(--paper);padding:22px 22px 24px;color:var(--muted);font-size:14px;line-height:1.45}
+.cs-stats strong{display:block;margin-bottom:8px;color:var(--ink);font-size:36px;font-weight:600;letter-spacing:-1.2px;line-height:1}
+.cs-section{display:grid;grid-template-columns:260px minmax(0,1fr);gap:24px 56px;padding:52px 0;border-top:1px solid var(--line)}
+.cs-section>h2{font-size:22px;font-weight:600;letter-spacing:-.5px;line-height:1.3;margin:0}
+.cs-body,.cs-steps,.cs-snapshot{max-width:44em}
+.cs-body p,.cs-body li,.cs-steps p{font-size:17px;line-height:1.65}
+.cs-body p{margin:0 0 18px}
+.cs-body>:last-child{margin-bottom:0}
+.cs-body ul,.cs-list{padding-left:20px}
+.cs-body li{margin:0 0 10px}
+.cs-list{margin:0}
+.cs-snapshot{margin:0}
+.cs-snapshot>div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.cs-snapshot>div:first-child{padding-top:0}
+.cs-snapshot dt{color:var(--label);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;padding-top:3px}
+.cs-snapshot dd{margin:0;font-size:16px;line-height:1.55}
+.cs-steps{list-style:none;counter-reset:step;margin:0;padding:0}
+.cs-steps li{counter-increment:step;position:relative;padding:0 0 30px 56px}
+.cs-steps li:last-child{padding-bottom:0}
+.cs-steps li:before{content:counter(step);position:absolute;left:0;top:0;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--teal);color:var(--ink);font-size:14px;font-weight:600}
+.cs-steps li:not(:last-child):after{content:'';position:absolute;left:16px;top:42px;bottom:8px;width:2px;background:var(--line)}
+.cs-steps h3{font-size:19px;font-weight:600;letter-spacing:-.3px;line-height:1.35;margin:5px 0 10px}
+.cs-steps p{margin:0 0 12px;color:var(--ink)}
+.cs-steps p:last-child{margin-bottom:0}
+.cs-callout{padding:30px 34px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--teal)}
+.cs-next{padding:8px 0 0;border-top:1px solid var(--line)}
+.cs-next .back-link{margin:24px 0 0}
 @keyframes arrive{from{opacity:0;transform:translateY(8px)}
 to{opacity:1;transform:translateY(0)}
 }
@@ -174,6 +210,10 @@ to{opacity:1;transform:translateY(0)}
 .pipeline-node{grid-row:1 / 3}
 .pipeline-step h3{margin:5px 0 6px}
 .featured-columns{grid-template-columns:1fr;gap:40px}
+.cs-hero h1{font-size:42px;letter-spacing:-1.6px}
+.cs-stats{grid-template-columns:repeat(2,1fr)}
+.cs-section{grid-template-columns:1fr;padding:44px 0}
+.case-study-card{flex-direction:column;align-items:flex-start}
 }
 
 @media(max-width:600px){.site-header{margin:0;padding:23px 0}
@@ -238,7 +278,20 @@ footer>.margin-note{display:none}
 .project-preview-card--featured h3{font-size:21px}
 nav .nav-home{display:none}
 .not-found-hero{min-height:auto;padding:118px 0 40px}
-.not-found-hero h1{font-size:clamp(30px,8.5vw,40px);letter-spacing:-1.4px}
+.not-found-hero h1,.cs-hero h1{font-size:clamp(30px,8.5vw,40px);letter-spacing:-1.4px}
+.cs-hero{padding:118px 0 40px}
+.cs-lede{font-size:18px}
+.cs-stats{margin-top:36px}
+.cs-stats li{padding:18px 16px 20px;font-size:13px}
+.cs-stats strong{font-size:28px}
+.cs-section{padding:36px 0}
+.cs-section>h2{font-size:20px}
+.cs-body p,.cs-body li,.cs-steps p{font-size:16px}
+.cs-snapshot>div{grid-template-columns:1fr;gap:4px}
+.cs-steps li{padding-left:48px}
+.cs-callout{padding:22px 20px}
+.case-study-card{padding:26px 22px;margin-bottom:48px}
+.case-study-card h2{font-size:21px}
 .subpage .site-footer{padding-top:42px}
 }
 

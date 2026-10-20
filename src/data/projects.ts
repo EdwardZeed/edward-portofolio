@@ -97,3 +97,11 @@ export const projects: Project[] = [
     repo: 'https://github.com/EdwardZeed/SOFT3202/tree/master/major_project',
   },
 ];
+
+export const bybitCaseStudy = {
+  slug: 'bybit',
+  path: '/projects/bybit',
+  title: 'From clicking through regression to catching problems upstream: QA at Bybit',
+  summary:
+    'I replaced most of my manual pre-release regression with UI and API automation using Playwright and Midscene, and led a tax pre-control from requirements to UAT.',
+};

@@ -11,7 +11,7 @@ import South from '@mui/icons-material/South';
 import ConnectionGlobe from '../components/ConnectionGlobe';
 import ContactFooter from '../components/ContactFooter';
 import useDocumentTitle from '../useDocumentTitle';
-import { joboard, projects } from '../data/projects';
+import { bybitCaseStudy, joboard, projects } from '../data/projects';
 
 type WorkItem = {
   name: string;
@@ -30,6 +30,7 @@ const work: WorkItem[] = [
     summary: 'UI & API automation for compliance workflows.',
     tags: 'KYC · KYB · AML · Transaction monitoring',
     period: 'Nov 2025 — Aug 2026',
+    caseStudy: bybitCaseStudy.path,
     details: [
       'Built and maintained UI and API automation for web and mobile compliance workflows, improving regression testing efficiency by 40%.',
       'Owned test planning, UAT and release-readiness checks for internal ERP and compliance modules, including database consistency and third-party integrations.',
@@ -228,6 +229,11 @@ function Home() {
                       <button className="text-link" onClick={() => openDetails(index)}>
                         My contribution <NorthEast />
                       </button>
+                      {item.caseStudy && (
+                        <Link className="text-link" to={item.caseStudy}>
+                          Read the case study <NorthEast />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </article>

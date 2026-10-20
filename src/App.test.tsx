@@ -34,10 +34,11 @@ test('resume links use the supplied CV and the experience map reveals a company'
  fireEvent.click(network);
  expect(screen.getByRole('button', { name: 'Miro Frontend Developer Intern' })).toHaveAttribute('aria-expanded', 'true');
 });
-test('home project cards link to their own project', () => {
+test('home project cards link to their own project and Bybit links to its case study', () => {
  render(<App />);
  expect(screen.getByRole('link', { name: /^Suncycle/ })).toHaveAttribute('href', '/projects#suncycle');
  expect(screen.getByRole('link', { name: /^Joboard/ })).toHaveAttribute('href', '/projects#joboard');
+ expect(screen.getByRole('link', { name: 'Read the case study' })).toHaveAttribute('href', '/projects/bybit');
 });
 test('contact goes to the same footer block on home and projects', () => {
  render(<App />);
@@ -48,6 +49,14 @@ test('contact goes to the same footer block on home and projects', () => {
  expect(screen.getByRole('heading', { name: 'Things I’ve built.' })).toBeInTheDocument();
  expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact');
  expect(screen.getByRole('link', { name: 'zhengwenxi7@gmail.com' })).toHaveAttribute('href', 'mailto:zhengwenxi7@gmail.com');
+ expect(screen.getByRole('link', { name: /Read the case study/ })).toHaveAttribute('href', '/projects/bybit');
+});
+test('the Bybit case study renders without draft placeholders', () => {
+ window.history.pushState({}, '', '/projects/bybit');
+ render(<App />);
+ expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('QA at Bybit');
+ expect(document.title).toBe('Bybit case study — Edward Zheng');
+ expect(document.body).not.toHaveTextContent(/TODO|Visuals to add|open items|What I’d do next/i);
 });
 test('unknown routes show a 404 page with links home and to projects', () => {
  window.history.pushState({}, '', '/about');

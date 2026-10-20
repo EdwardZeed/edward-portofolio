@@ -4,7 +4,7 @@ import NorthEast from '@mui/icons-material/NorthEast';
 import SubpageHeader from '../components/SubpageHeader';
 import ContactFooter from '../components/ContactFooter';
 import useDocumentTitle from '../useDocumentTitle';
-import { joboard, projects } from '../data/projects';
+import { bybitCaseStudy, joboard, projects } from '../data/projects';
 
 function Projects() {
   useDocumentTitle('Projects — Edward Zheng');
@@ -70,6 +70,17 @@ function Projects() {
               </a>
             </div>
           </div>
+        </article>
+
+        <article className="case-study-card" id={bybitCaseStudy.slug} aria-labelledby="bybit-case-title">
+          <div>
+            <p className="eyebrow">Case study · Bybit</p>
+            <h2 id="bybit-case-title">{bybitCaseStudy.title}</h2>
+            <p>{bybitCaseStudy.summary}</p>
+          </div>
+          <Link className="text-link" to={bybitCaseStudy.path}>
+            Read the case study <NorthEast />
+          </Link>
         </article>
 
         <h2 className="earlier-title" id="earlier-title">Earlier projects</h2>
