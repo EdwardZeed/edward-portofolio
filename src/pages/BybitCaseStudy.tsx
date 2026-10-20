@@ -51,7 +51,7 @@ function BybitCaseStudy() {
         </header>
 
         <section className="cs-section" aria-labelledby="cs-hook">
-          <h2 id="cs-hook">The hook</h2>
+          <h2 id="cs-hook">The starting point</h2>
           <div className="cs-body">
             <p>
               Every requirement shipped on three platforms: Web, Android and iOS. Before every release, I clicked
@@ -99,13 +99,13 @@ function BybitCaseStudy() {
           <h2 id="cs-approach">My approach</h2>
           <ol className="cs-steps">
             <li>
-              <h3>Automate what repeats most: the Compliance Wall</h3>
+              <h3>Automate what repeats most: the compliance gate</h3>
               <p>
-                I started with the <strong>Compliance Wall</strong>, the rule-driven checks that gate user actions. It
+                I started with the <strong>compliance gate</strong>, the rule-driven checks that gate user actions. It
                 was the most repeatable work, so it was the best fit for automation.
               </p>
               <p>
-                It was also slow to test by hand: changes to Compliance Wall strategies often took time to take effect,
+                It was also slow to test by hand: changes to compliance gate strategies often took time to take effect,
                 so manual checks meant waiting, re-checking and repeating.
               </p>
             </li>
@@ -171,7 +171,7 @@ function BybitCaseStudy() {
             <p>
               <strong>What we built:</strong> a <strong>pre-control</strong>. Before a user could{' '}
               <strong>trade, transfer or claim a promotion</strong>, they were prompted to complete their tax
-              information. It was built on the existing <strong>Compliance Wall</strong>, with new strategy
+              information. It was built on the existing <strong>compliance gate</strong>, with new strategy
               configurations for tax compliance control.
             </p>
             <p>
@@ -215,7 +215,7 @@ function BybitCaseStudy() {
           <ul className="cs-body cs-list">
             <li>
               <strong>Automate the most repeatable, slowest-to-verify work first.</strong> For me that was the
-              Compliance Wall.
+              compliance gate.
             </li>
             <li>
               <strong>People only rely on a test suite they trust.</strong> A stable pass rate mattered more than raw
